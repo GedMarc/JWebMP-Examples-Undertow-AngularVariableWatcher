@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>za.co.mmagon.jwebswing.examples.undertow</groupId>
+    <groupId>com.jwebmp.examples.undertow</groupId>
     <artifactId>angularvariablewatcherdemo</artifactId>
     <version>0.0.0_0</version>
     <packaging>jar</packaging>
@@ -32,20 +32,20 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <jwebswing.version>0.0.0_0</jwebswing.version>
+        <jwebmp.version>0.0.0_0</jwebmp.version>
     </properties>
 
     <dependencies>
 
         <dependency>
-            <groupId>za.co.mmagon</groupId>
-            <artifactId>jwebswing</artifactId>
+            <groupId>com.jwebmp</groupId>
+            <artifactId>jwebmp-core</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>za.co.mmagon</groupId>
-            <artifactId>jwebswing-undertow</artifactId>
+            <groupId>com.jwebmp</groupId>
+            <artifactId>jwebmp-undertow</artifactId>
             <version>${project.version}</version>
         </dependency>
 
