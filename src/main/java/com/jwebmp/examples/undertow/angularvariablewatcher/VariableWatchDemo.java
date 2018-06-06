@@ -4,14 +4,14 @@ import com.jwebmp.Page;
 import com.jwebmp.base.angular.AngularVariableWatcher;
 import com.jwebmp.base.html.Paragraph;
 import com.jwebmp.base.html.inputs.InputTextType;
+import com.jwebmp.guiceinjection.GuiceContext;
+import com.jwebmp.logger.LogFactory;
+import com.jwebmp.logger.handlers.ConsoleSTDOutputHandler;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.servlet.Servlets;
 import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
-import za.co.mmagon.guiceinjection.GuiceContext;
-import za.co.mmagon.logger.LogFactory;
-import za.co.mmagon.logger.handlers.ConsoleSTDOutputHandler;
 
 import javax.servlet.ServletException;
 import java.util.logging.Handler;
