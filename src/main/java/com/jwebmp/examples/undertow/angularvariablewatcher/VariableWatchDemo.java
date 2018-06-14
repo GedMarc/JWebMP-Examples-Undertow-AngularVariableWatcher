@@ -6,7 +6,6 @@ import com.jwebmp.base.html.Paragraph;
 import com.jwebmp.base.html.inputs.InputTextType;
 import com.jwebmp.guiceinjection.GuiceContext;
 import com.jwebmp.logger.LogFactory;
-import com.jwebmp.logger.handlers.ConsoleSTDOutputHandler;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.servlet.Servlets;
@@ -14,9 +13,7 @@ import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
 
 import javax.servlet.ServletException;
-import java.util.logging.Handler;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class VariableWatchDemo
 		extends Page
@@ -51,17 +48,7 @@ public class VariableWatchDemo
 	 */
 	public static void main(String[] args) throws ServletException
 	{
-		Handler[] handles = Logger.getLogger("")
-		                          .getHandlers();
-		for (Handler handle : handles)
-		{
-			handle.setLevel(Level.FINE);
-		}
-		LogFactory.setDefaultLevel(Level.FINE);
-		Logger.getLogger("")
-		      .addHandler(new ConsoleSTDOutputHandler(true));
-		GuiceContext.getLog()
-		            .addHandler(new ConsoleSTDOutputHandler(true));
+		LogFactory.configureConsoleColourOutput(Level.FINE);
 
 		DeploymentInfo servletBuilder = Servlets.deployment()
 		                                        .setClassLoader(VariableWatchDemo.class.getClassLoader())
