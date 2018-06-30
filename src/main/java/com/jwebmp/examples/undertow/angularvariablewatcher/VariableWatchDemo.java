@@ -4,7 +4,7 @@ import com.jwebmp.Page;
 import com.jwebmp.base.angular.AngularVariableWatcher;
 import com.jwebmp.base.html.Paragraph;
 import com.jwebmp.base.html.inputs.InputTextType;
-import com.jwebmp.guiceinjection.GuiceContext;
+import com.jwebmp.guicedinjection.GuiceContext;
 import com.jwebmp.logger.LogFactory;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
