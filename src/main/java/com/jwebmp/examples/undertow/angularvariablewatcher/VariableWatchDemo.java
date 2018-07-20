@@ -1,5 +1,6 @@
 package com.jwebmp.examples.undertow.angularvariablewatcher;
 
+import com.google.inject.servlet.GuiceFilter;
 import com.jwebmp.Page;
 import com.jwebmp.base.angular.AngularVariableWatcher;
 import com.jwebmp.base.html.Paragraph;
@@ -8,10 +9,13 @@ import com.jwebmp.guicedinjection.GuiceContext;
 import com.jwebmp.logger.LogFactory;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
+import io.undertow.server.handlers.resource.ClassPathResourceManager;
 import io.undertow.servlet.Servlets;
 import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
+import io.undertow.servlet.api.FilterInfo;
 
+import javax.servlet.DispatcherType;
 import javax.servlet.ServletException;
 import java.util.logging.Level;
 
@@ -48,17 +52,25 @@ public class VariableWatchDemo
 	 */
 	public static void main(String[] args) throws ServletException
 	{
+		LogFactory.setLogToConsole(true);
 		LogFactory.configureConsoleColourOutput(Level.FINE);
 
-		DeploymentInfo servletBuilder = Servlets.deployment()
+		DeploymentInfo deploymentInfo = Servlets.deployment()
 		                                        .setClassLoader(VariableWatchDemo.class.getClassLoader())
 		                                        .setContextPath("/")
-		                                        .setDeploymentName("layoutdemo.war");
-		DeploymentManager manager = Servlets.defaultContainer()
-		                                    .addDeployment(servletBuilder);
-		manager.deploy();
+		                                        .setDeploymentName("VariableWatchDemo.war");
+
+		deploymentInfo.addFilter(new FilterInfo("GuiceFilter", GuiceFilter.class).setAsyncSupported(true));
+		deploymentInfo.addFilterUrlMapping("GuiceFilter", "/*", DispatcherType.REQUEST);
+		deploymentInfo.setResourceManager(new ClassPathResourceManager(deploymentInfo.getClassLoader(), "META-INF/resources"));
+
+		DeploymentManager manager2 = Servlets.defaultContainer()
+		                                     .addDeployment(deploymentInfo);
+
 		GuiceContext.inject();
-		HttpHandler jwebSwingHandler = manager.start();
+		manager2.deploy();
+
+		HttpHandler jwebSwingHandler = manager2.start();
 		Undertow server = Undertow.builder()
 		                          .addHttpListener(6002, "localhost")
 		                          .setHandler(jwebSwingHandler)
