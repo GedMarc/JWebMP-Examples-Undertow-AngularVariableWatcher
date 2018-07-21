@@ -1,11 +1,11 @@
 package com.jwebmp.examples.undertow.angularvariablewatcher;
 
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.base.ajax.AjaxCall;
-import com.jwebmp.base.ajax.AjaxResponse;
-import com.jwebmp.base.ajax.AjaxResponseReaction;
-import com.jwebmp.base.angular.AngularChangeDto;
-import com.jwebmp.base.angular.AngularChangeEvent;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.ajax.AjaxCall;
+import com.jwebmp.core.base.ajax.AjaxResponse;
+import com.jwebmp.core.base.ajax.AjaxResponseReaction;
+import com.jwebmp.core.base.angular.AngularChangeDto;
+import com.jwebmp.core.base.angular.AngularChangeEvent;
 
 public class DemoVariableEvent
 		extends AngularChangeEvent<DemoVariableEvent>

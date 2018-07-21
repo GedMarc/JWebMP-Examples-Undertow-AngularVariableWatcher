@@ -1,10 +1,10 @@
 package com.jwebmp.examples.undertow.angularvariablewatcher;
 
 import com.google.inject.servlet.GuiceFilter;
-import com.jwebmp.Page;
-import com.jwebmp.base.angular.AngularVariableWatcher;
-import com.jwebmp.base.html.Paragraph;
-import com.jwebmp.base.html.inputs.InputTextType;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.base.angular.AngularVariableWatcher;
+import com.jwebmp.core.base.html.Paragraph;
+import com.jwebmp.core.base.html.inputs.InputTextType;
 import com.jwebmp.guicedinjection.GuiceContext;
 import com.jwebmp.logger.LogFactory;
 import io.undertow.Undertow;
