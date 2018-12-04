@@ -66,8 +66,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.google.inject.extensions</groupId>
+            <groupId>com.jwebmp.inject.extensions</groupId>
             <artifactId>guice-servlet</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
