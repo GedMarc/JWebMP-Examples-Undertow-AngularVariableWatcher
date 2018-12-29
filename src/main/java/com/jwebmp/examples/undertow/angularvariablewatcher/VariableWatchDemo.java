@@ -2,7 +2,8 @@ package com.jwebmp.examples.undertow.angularvariablewatcher;
 
 import com.google.inject.servlet.GuiceFilter;
 import com.jwebmp.core.Page;
-import com.jwebmp.core.base.angular.AngularVariableWatcher;
+import com.jwebmp.core.base.angular.AngularClientVariableWatcher;
+import com.jwebmp.core.base.angular.AngularPageConfigurator;
 import com.jwebmp.core.base.html.Paragraph;
 import com.jwebmp.core.base.html.inputs.InputTextType;
 import com.jwebmp.guicedinjection.GuiceContext;
@@ -37,10 +38,13 @@ public class VariableWatchDemo
 		textInputOnBlur.setPlaceholder("On-Blur Update - Value Here");
 		add(textInputOnBlur);
 
-		getAngular().getAngularWatchers()
-		            .add(new AngularVariableWatcher("DemoWatcher", "demo.var", DemoVariableEvent.class));
-		getAngular().getAngularWatchers()
-		            .add(new AngularVariableWatcher("DemoWatcherOnBlur", "demo.var2", DemoVariableEvent.class));
+
+		GuiceContext.get(AngularPageConfigurator.class)
+		            .getAngularWatchers()
+		            .add(new AngularClientVariableWatcher("DemoWatcher", "demo.var", DemoVariableEvent.class));
+		GuiceContext.get(AngularPageConfigurator.class)
+		            .getAngularWatchers()
+		            .add(new AngularClientVariableWatcher("DemoWatcherOnBlur", "demo.var2", DemoVariableEvent.class));
 	}
 
 	/**

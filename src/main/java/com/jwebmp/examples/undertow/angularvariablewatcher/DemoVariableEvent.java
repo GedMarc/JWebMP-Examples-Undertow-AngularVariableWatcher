@@ -1,6 +1,6 @@
 package com.jwebmp.examples.undertow.angularvariablewatcher;
 
-import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.Component;
 import com.jwebmp.core.base.ajax.AjaxCall;
 import com.jwebmp.core.base.ajax.AjaxResponse;
 import com.jwebmp.core.base.ajax.AjaxResponseReaction;
@@ -11,7 +11,7 @@ public class DemoVariableEvent
 		extends AngularChangeEvent<DemoVariableEvent>
 {
 
-	public DemoVariableEvent(ComponentHierarchyBase component)
+	public DemoVariableEvent(Component component)
 	{
 		super(component);
 	}
