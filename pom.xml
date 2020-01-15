@@ -40,13 +40,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.guicedee.services</groupId>
-            <artifactId>guiced-servlets</artifactId>
-            <type>jar</type>
-        </dependency>
-
-        <dependency>
-            <groupId>com.guicedee.servlets</groupId>
+            <groupId>com.guicedee</groupId>
             <artifactId>guiced-undertow</artifactId>
             <type>jar</type>
         </dependency>
@@ -62,13 +56,6 @@
             <artifactId>guiced-log-master</artifactId>
             <type>jar</type>
         </dependency>
-
-        <dependency>
-             <groupId>com.guicedee.services</groupId>
-            <artifactId>guice-servlet</artifactId>
-            <type>jar</type>
-        </dependency>
-
 
         <dependency>
              <groupId>com.guicedee.services</groupId>
