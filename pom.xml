@@ -52,17 +52,17 @@
         </dependency>
 
         <dependency>
-             <groupId>com.guicedee.services</groupId>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>undertow-core</artifactId>
         </dependency>
 
         <dependency>
-             <groupId>com.guicedee.services</groupId>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>undertow-servlet</artifactId>
         </dependency>
 
         <dependency>
-             <groupId>com.guicedee.services</groupId>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>undertow-websockets-jsr</artifactId>
         </dependency>
     </dependencies>
